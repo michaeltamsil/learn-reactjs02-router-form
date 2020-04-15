@@ -5,7 +5,7 @@ import DataWanderlink from './components/DataWanderlink';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
 import TodoApp from './components/TodoApp';
-
+import Siswa from './components/Siswa';
 
 function App() {
   return (
@@ -13,12 +13,12 @@ function App() {
       <Container>
         <NavBar/>
         <Switch>
-          <Route path="/todoapp/">
+          <Route path="/todoapp">
             <TodoApp/>
           </Route>
-          
-          
-
+          <Route path="/siswa">
+            <Siswa/>
+          </Route>
           <Route path="/data_wanderlink">
             <DataWanderlink/>
           </Route>
