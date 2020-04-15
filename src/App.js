@@ -13,16 +13,25 @@ function App() {
       <Container>
         <NavBar/>
         <Switch>
-          <Route path="/todoapp">
+          <Route path="/todoapp/">
             <TodoApp/>
           </Route>
+          
+          
+
           <Route path="/data_wanderlink">
             <DataWanderlink/>
           </Route>
-          <Route path="" exact>
+          
+          <Route path="/" exact>
             <Home/>
           </Route>
+          <Route path="/">
+            <h1 style={{color: "red"}}>maaf, halaman tidak ditemukan</h1>
+          </Route>
+
         </Switch>
+        <footer>ini kaki</footer>
       </Container>
     </Router>
 
