@@ -1,38 +1,24 @@
-import React, { Component } from 'react';
-import { Row } from 'react-bootstrap';
-import axios from 'axios';
+import React from 'react';
+import { Route, Switch, useRouteMatch } from 'react-router-dom'
 
-import Item from './Item';
+import Detail from './Detail';
+import Main from './Main';
 
-class index extends Component {
+const Index = () => {
+    const { path } = useRouteMatch();
 
-    state = {
-        data: []
-    }
+    return (
+        <Switch>
+            <Route path={`${path}/:id`}>
+                ini adalah detail
+                <Detail/>
+            </Route>
 
-    componentDidMount(){
-        axios.get('http://35.240.201.155:3000/api/v1/wanderlink/show/idn/destination')
-            .then( response => {
-                this.setState({ data: response.data });
-            })
-    }
+            <Route path={path} exact>
+                <Main/>
+            </Route>
+        </Switch>
+    )
+};
 
-    render(){
-        let tampilkanWisata ;
-
-        tampilkanWisata = this.state.data.map( (item, index) => {
-            return <Item key={index} data={item}></Item>
-        })
-
-        return (
-            <div>
-                <h1>Data Wanderlink</h1>
-                <Row>
-                    { tampilkanWisata }
-                </Row>
-            </div>
-        )
-    }
-}
-
-export default index;
+export default Index;

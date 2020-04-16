@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import DataWanderlink from './components/DataWanderlink';
+import DataWanderlink from './components/DataWanderlink/';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
 import TodoApp from './components/TodoApp';
 import Siswa from './components/Siswa';
+import ReactHook from './components/ReactHook';
 
 function App() {
   return (
@@ -21,6 +22,10 @@ function App() {
           </Route>
           <Route path="/data_wanderlink">
             <DataWanderlink/>
+          </Route>
+          <Route path="/react_hook">
+            <h1>ini adalah react hook</h1>
+            <ReactHook/>
           </Route>
           
           <Route path="/" exact>

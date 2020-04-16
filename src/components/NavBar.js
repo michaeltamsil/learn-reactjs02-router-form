@@ -11,6 +11,7 @@ const Navbar1 = () => {
                     <Link className="nav-link" to="todoapp">TodoApp</Link>
                     <Link className="nav-link" to="siswa">Siswa</Link>
                     <Link className="nav-link" to="data_wanderlink">Data Wanderlink</Link>
+                    <Link className="nav-link" to="react_hook">React Hook</Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
