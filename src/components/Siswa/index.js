@@ -1,47 +1,28 @@
 import React from 'react';
-import { useFormik } from 'formik';
+import {Switch, Route, useRouteMatch } from 'react-router-dom';
 
-const SignupForm = () => {
-  // Pass the useFormik() hook initial form values and a submit function that will
-  // be called when the form is submitted
-  const formik = useFormik({
-    initialValues: {
-      nama: '',
-      alamat: '',
-      kelas: 1
-    },
-    onSubmit: values => {
-      console.log(values)
-    },
-  });
-  
+import Add from './Add';
+import Detail from './Detail/index';
+import Main from './Main';
+import Navbar from './Navbar';
+
+const Index = () => {
+  let { path } = useRouteMatch();
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <label>nama</label>
-      <input
-        name="nama"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.nama}
-      />
-      <br/>
-      <label>Alamat</label>
-      <input
-        type="text"
-        name="alamat"
-        onChange={formik.handleChange}
-        value={formik.values.alamat}
-        />
-        <br/>
-        <label>Kelas</label>
-        <input
-            type="number"
-            name="kelas"
-            onChange={formik.handleChange}
-            value={formik.values.kelas}
-        />
-      <button type="submit">Submit</button>
-    </form>
-  );
+      <div>
+        <Navbar/>
+        <Switch>
+          <Route path={path} exact>
+            <Main/>
+          </Route>
+          <Route path={`${path}/add`}>
+            <Add/>
+          </Route>
+          <Route path={`${path}/:id`}>
+            <Detail/>
+          </Route>
+        </Switch>
+      </div>
+    );
 };
-export default SignupForm;
+export default Index;

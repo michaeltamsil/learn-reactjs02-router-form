@@ -36,7 +36,7 @@ function App() {
           </Route>
 
         </Switch>
-        <footer>ini kaki</footer>
+        
       </Container>
     </Router>
 

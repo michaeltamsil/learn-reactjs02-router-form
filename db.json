@@ -3,11 +3,17 @@
     {
       "nama": "budi",
       "alamat": "belakang ikan bakar",
-      "kelas": "2",
+      "kelas": "29",
       "id": 1
+    },
+    {
+      "nama": "vincent",
+      "alamat": "ruang kreasi",
+      "kelas": 9,
+      "id": 2
     }
   ],
-  "data_wanderlink":[
+  "data_wanderlink": [
     {
       "id": "5e3305932a7d5254aadd3108",
       "nama": "tangga seribu"
